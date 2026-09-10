@@ -1,0 +1,18 @@
+# Data files
+data/
+
+# Model artifacts
+model/
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model file types 
+*.pkl
+*.h5
+*.joblib
+
