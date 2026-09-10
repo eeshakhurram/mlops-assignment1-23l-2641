@@ -23,7 +23,8 @@ def load_data(path):
 
 def train_model(df):
     x = df.drop(columns=[target_column])
-    x = x.select_dtypes(include=["number"])  #keep numeric columns only
+    X = X.select_dtypes(include=["number"])
+    X = (X - X.mean()) / X.std()  # normalize
     y = df[target_column]
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
