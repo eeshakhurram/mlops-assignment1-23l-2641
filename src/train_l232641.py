@@ -1,6 +1,6 @@
 # Model Training Script
 
-
+# testing stash
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -23,12 +23,8 @@ def load_data(path):
 
 def train_model(df):
     x = df.drop(columns=[target_column])
-    X = X.select_dtypes(include=["number"])
-<<<<<<< HEAD
-    X = (X - X.mean()) / X.std()  # normalize
-=======
-    X = (X - X.min()) / (X.max() - X.min())  # min-max scaling
->>>>>>> feature-tuning-l232641
+    x = x.select_dtypes(include=["number"])
+    x = (x - x.min()) / (x.max() - x.min())  # min-max scaling
     y = df[target_column]
 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
